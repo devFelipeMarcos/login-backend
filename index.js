@@ -20,7 +20,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-const { PORT } = process.env;
+const PORT = process.env.PORT || 10000;
 const { SECRET_KEY } = process.env;
 app.use(
   cors({
