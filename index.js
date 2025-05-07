@@ -125,7 +125,7 @@ app.post("/login", loginLimiter, async (req, res) => {
     res.cookie("TOKEN", token).status(200).json({
       success: true,
       message: "Login realizado com sucesso!",
-      token: token,
+      token: `Bearer ${token}`,
     });
   }
 });
