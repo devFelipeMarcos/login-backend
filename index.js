@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import rateLimit from "express-rate-limit";
 
+
 const loginLimiter = rateLimit({
   windowMs: 5 * 60 * 1000, // 5 minutos
   max: 10, // Máximo de 10 requisições por IP nesse período
@@ -18,6 +19,7 @@ const loginLimiter = rateLimit({
 
 dotenv.config();
 const app = express();
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(cookieParser());
 const PORT = process.env.PORT || 10000;
