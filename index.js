@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 10000;
 const { SECRET_KEY } = process.env;
 app.use(
   cors({
-    origin: "https://fjapa.shop",
+    origin: "https://login-frontend-y8me-p2yrtxnwv-devfelipemarcos-projects.vercel.app/",
     credentials: true,
   })
 );
