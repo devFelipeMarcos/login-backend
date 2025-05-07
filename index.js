@@ -46,7 +46,7 @@ try {
 // this endpoint is to create a new user
 app.post("/user", async (req, res) => {
   const { name, email, password } = req.body;
-  const ip = req.ip;
+  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
   if (!name || !email || !password) {
     return res.status(400).json({
